@@ -1,0 +1,20 @@
+PODS:
+  - Masonry (1.1.0)
+  - SwiftLint (0.40.3)
+
+DEPENDENCIES:
+  - Masonry
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
+
+PODFILE CHECKSUM: eeca9f757f19f0076904e2d67a2410c7d9bf47b9
+
+COCOAPODS: 1.9.1
