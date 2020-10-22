@@ -3,16 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1D30EF05254162C90021E424 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30EF04254162C90021E424 /* AppDelegate.swift */; };
 		1D30EF07254162C90021E424 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30EF06254162C90021E424 /* SceneDelegate.swift */; };
 		1D30EF09254162C90021E424 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30EF08254162C90021E424 /* ViewController.swift */; };
-		1D30EF0C254162C90021E424 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D30EF0A254162C90021E424 /* Main.storyboard */; };
 		1D30EF0E254162CA0021E424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D30EF0D254162CA0021E424 /* Assets.xcassets */; };
 		1D30EF11254162CA0021E424 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D30EF0F254162CA0021E424 /* LaunchScreen.storyboard */; };
+		1D30EF1A254197B40021E424 /* TableViewDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30EF19254197B40021E424 /* TableViewDetailsCell.swift */; };
 		F9865BEBAF38BE01CA45FB7C /* Pods_AboutCanada.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97AB3C77FECB355253457E8B /* Pods_AboutCanada.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,10 +21,10 @@
 		1D30EF04254162C90021E424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D30EF06254162C90021E424 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1D30EF08254162C90021E424 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1D30EF0B254162C90021E424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D30EF0D254162CA0021E424 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D30EF10254162CA0021E424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D30EF12254162CA0021E424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D30EF19254197B40021E424 /* TableViewDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDetailsCell.swift; sourceTree = "<group>"; };
 		4EB80FDAEC3987DD6762994A /* Pods-AboutCanada.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AboutCanada.release.xcconfig"; path = "Target Support Files/Pods-AboutCanada/Pods-AboutCanada.release.xcconfig"; sourceTree = "<group>"; };
 		97AB3C77FECB355253457E8B /* Pods_AboutCanada.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AboutCanada.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE92742B7FF6D12BAA1BFF92 /* Pods-AboutCanada.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AboutCanada.debug.xcconfig"; path = "Target Support Files/Pods-AboutCanada/Pods-AboutCanada.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 				1D30EF04254162C90021E424 /* AppDelegate.swift */,
 				1D30EF06254162C90021E424 /* SceneDelegate.swift */,
 				1D30EF08254162C90021E424 /* ViewController.swift */,
-				1D30EF0A254162C90021E424 /* Main.storyboard */,
+				1D30EF19254197B40021E424 /* TableViewDetailsCell.swift */,
 				1D30EF0D254162CA0021E424 /* Assets.xcassets */,
 				1D30EF0F254162CA0021E424 /* LaunchScreen.storyboard */,
 				1D30EF12254162CA0021E424 /* Info.plist */,
@@ -88,7 +88,6 @@
 				AE92742B7FF6D12BAA1BFF92 /* Pods-AboutCanada.debug.xcconfig */,
 				4EB80FDAEC3987DD6762994A /* Pods-AboutCanada.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,7 +153,6 @@
 			files = (
 				1D30EF11254162CA0021E424 /* LaunchScreen.storyboard in Resources */,
 				1D30EF0E254162CA0021E424 /* Assets.xcassets in Resources */,
-				1D30EF0C254162C90021E424 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +207,7 @@
 			files = (
 				1D30EF09254162C90021E424 /* ViewController.swift in Sources */,
 				1D30EF05254162C90021E424 /* AppDelegate.swift in Sources */,
+				1D30EF1A254197B40021E424 /* TableViewDetailsCell.swift in Sources */,
 				1D30EF07254162C90021E424 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,14 +215,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1D30EF0A254162C90021E424 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1D30EF0B254162C90021E424 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1D30EF0F254162CA0021E424 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
