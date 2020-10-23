@@ -5,6 +5,7 @@
 
  pod 'SwiftLint'
  pod 'Masonry'
+ pod 'SDWebImage', '~> 4.4'
 
 
 target 'AboutCanada' do
