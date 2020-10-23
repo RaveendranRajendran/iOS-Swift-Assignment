@@ -46,7 +46,6 @@ extension API {
                 urlRequest.httpBody = httpBody
             }
         }
-
         session.dataTask(with: urlRequest) { (data, response, error) in
             print(String(data: data ?? Data(), encoding: String.Encoding.utf8) ?? "")
             completionHandler(data, error)

@@ -15,8 +15,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var tblAboutCanada: UITableView!;
     var countryInfo: CanadaInfo?
     var imgUrl: URL?
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCountryInfo();
@@ -37,8 +36,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             self.tblAboutCanada = UITableView()
             self.tblAboutCanada.delegate = self;
             self.tblAboutCanada.dataSource = self;
-            self.tblAboutCanada.rowHeight = UITableView.automaticDimension
-            self.tblAboutCanada.estimatedRowHeight = UITableView.automaticDimension
             self.tblAboutCanada.register(TableViewDetailsCell.self, forCellReuseIdentifier: "CanadaDetailsCell")
             self.view.addSubview(self.tblAboutCanada);
             self.setTableViewConstraints();
@@ -51,7 +48,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tblAboutCanada.leftAnchor.constraint(equalTo:self.view.leftAnchor).isActive = true
         self.tblAboutCanada.rightAnchor.constraint(equalTo:self.view.rightAnchor).isActive = true
         self.tblAboutCanada.bottomAnchor.constraint(equalTo:self.view.bottomAnchor).isActive = true
-        
     }
     
    // Table View data Source
@@ -79,18 +75,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //Used SDWebImage to display Image
         imgUrl = URL(string: countryInfo?.rows[indexPath.row].imageHref ?? "");
         cell.imgDisplay.sd_setImage(with: imgUrl, placeholderImage: UIImage(named: "NoImage.jpg"), options: .transformAnimatedImage, progress: nil, completed: nil);
-
        return cell;
     }
     //Table View Delegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return UITableView.automaticDimension;
+        return 160.0;
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
     }
     
 }

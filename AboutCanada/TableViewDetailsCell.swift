@@ -9,7 +9,6 @@
 import UIKit
 
 class TableViewDetailsCell: UITableViewCell {
-    
     var lblTitle = UILabel();
     var lblDescription = UILabel();
     var imgDisplay = UIImageView();
@@ -35,7 +34,6 @@ class TableViewDetailsCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -73,7 +71,6 @@ class TableViewDetailsCell: UITableViewCell {
     
     func setTitleConstraint() {
         self.lblTitle.translatesAutoresizingMaskIntoConstraints = false;
-        //self.lblTitle.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true;
         self.lblTitle.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true;
         self.lblTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true;
         self.lblTitle.heightAnchor.constraint(equalToConstant: 20).isActive = true;
