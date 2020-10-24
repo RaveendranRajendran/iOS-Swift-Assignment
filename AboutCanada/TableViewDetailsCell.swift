@@ -59,14 +59,17 @@ class TableViewDetailsCell: UITableViewCell {
         self.imgDisplay.leadingAnchor.constraint(equalTo:leadingAnchor, constant: 12).isActive = true
         self.imgDisplay.heightAnchor.constraint(equalToConstant: 80).isActive = true
         self.imgDisplay.widthAnchor.constraint(equalTo:imgDisplay.heightAnchor, multiplier: 16/9).isActive = true
+        self.imgDisplay.topAnchor.constraint(equalTo: lblTitle.bottomAnchor,constant: 5).isActive = true
+        
     }
     
     func setDescriptionConstraints() {
         self.lblDescription.translatesAutoresizingMaskIntoConstraints = false
         self.lblDescription.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         self.lblDescription.leadingAnchor.constraint(equalTo: imgDisplay.trailingAnchor, constant: 40).isActive = true
-        self.lblDescription.heightAnchor.constraint(equalToConstant: 80).isActive = true;
         self.lblDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -13).isActive = true;
+        self.lblDescription.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true;
+        self.lblDescription.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true;
     }
     
     func setTitleConstraint() {
