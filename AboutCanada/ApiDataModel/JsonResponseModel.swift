@@ -8,6 +8,7 @@
 
 import Foundation
 
+//MARK: RESPONSE MODEL
 struct CanadaInfo: Codable {
     var title: String?
     var rows: [rowData]

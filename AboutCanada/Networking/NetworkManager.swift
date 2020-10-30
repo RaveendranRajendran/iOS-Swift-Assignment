@@ -13,27 +13,29 @@ enum NetworkCalls {
 }
 
 extension NetworkCalls {
+    //MARK: URL STRINGS
     public func url() -> URL {
         // Get the url from the constants.
-        let urlStr = urlString.countryUrlStr;
+        let urlStr = urlString.URL_STRING;
         return URL(string: urlStr)!
     }
-    
+    //MARK: REQUEST METHODS
     public var method: String {
             return "GET"
         }
+    //MARK: API HEADERS
     public var headers: [String: String]? {
         return ["Content-Type": "application/json"]
     }
 }
 
 extension API {
-    /// All API request should pass through this function
+    //MARK: All API request should pass through this function
     ///
-    /// - Parameters:
-    ///   - route: Enum type which contains URL,HTTP Method, HTTP Headers etc..
-    ///   - body: Parameters to be passed to the API
-    ///   - completionHandler: Will return the response from API
+    //MARK: - PARAMETERS:
+    ///   - ROUTE: Enum type which contains URL,HTTP Method, HTTP Headers etc..
+    ///   - BODY: Parameters to be passed to the API
+    ///   - COMPLETION HANDLER: Will return the response from API
     class func apiRequest(route: NetworkCalls, body: [String: Any]?, completionHandler: @escaping(_ data: Data?, _ error: Error?) -> Void) {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)

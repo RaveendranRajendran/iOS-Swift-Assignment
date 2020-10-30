@@ -1,26 +1,22 @@
 PODS:
-  - Masonry (1.1.0)
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
   - SwiftLint (0.40.3)
 
 DEPENDENCIES:
-  - Masonry
   - SDWebImage (~> 4.4)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
-    - Masonry
     - SDWebImage
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
 
-PODFILE CHECKSUM: ae5c1099cb4d4fc13f6980307a6525225dbf1553
+PODFILE CHECKSUM: c0ce2f3c053b0af6504ae7a1eac506243c372017
 
 COCOAPODS: 1.9.1

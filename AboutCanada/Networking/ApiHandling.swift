@@ -11,12 +11,11 @@ import UIKit
 
 typealias RequestError = (_ error: String) -> Void
 
-
 class API {
-    /// get Canda Country Information
-    /// - Parameters:
-    ///   - success: Completion handler with success response
-    ///   - failure: Completion handler with error description.
+    //MARK: fetch Canda Country Information
+    // - Parameters:
+    //   - success: Completion handler with success response
+    //  - failure: Completion handler with error description.
     class func fetchCountryData(success: @escaping (_ response: CanadaInfo) -> Void, failure : @escaping RequestError) {
         API.apiRequest(
             route: .getCountryInfo,
@@ -26,18 +25,19 @@ class API {
                 }
                 if let apiResponse = data {
                     do {
-                        let responseStrInISOLatin = String(data: apiResponse, encoding: String.Encoding.isoLatin1);
+                        let responseStrInISOLatin = String(data: apiResponse, encoding: String.Encoding.isoLatin1)
                         guard let modifiedDataInUTF8Format = responseStrInISOLatin?.data(using: String.Encoding.utf8) else {
-                            print("Could not convert data to UTF8 Foramt");
                             return
                         }
                         // Conver Json to Swift stuct
-                        let decoder = JSONDecoder()
-                        let myStruct = try! decoder.decode(CanadaInfo.self, from: modifiedDataInUTF8Format);
-                        print(myStruct);
-                        success(myStruct);
+                        do {
+                            let myStruct = try JSONDecoder().decode(CanadaInfo.self, from: modifiedDataInUTF8Format)
+                            success(myStruct)
+                        }
+                        
                     } catch let error {
-                            failure(error.localizedDescription)                    }
+                            failure(error.localizedDescription)
+                    }
                 }
         }
     }

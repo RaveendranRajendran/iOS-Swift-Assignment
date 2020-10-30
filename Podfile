@@ -4,7 +4,6 @@
  use_frameworks!
 
  pod 'SwiftLint'
- pod 'Masonry'
  pod 'SDWebImage', '~> 4.4'
 
 
