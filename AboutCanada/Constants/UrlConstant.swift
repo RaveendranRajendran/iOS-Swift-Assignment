@@ -8,8 +8,8 @@
 
 import Foundation
 
+//MARK: APPLICATION URL
 public struct urlString {
-    
-    static let countryUrlStr = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json";
+    static let URL_STRING = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
 
 }
