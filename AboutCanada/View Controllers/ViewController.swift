@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var imgUrl: URL?
     var refreshControl = UIRefreshControl()
     var activityIndicator: UIActivityIndicatorView!
+    let loadingTextLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +28,16 @@ class ViewController: UIViewController {
         self.title = appStrings.DEFAULT_TITLE
         // Do any additional setup after loading the view.
     }
-    
+    //MARK: CUSTOMIZE ACTIVITY INDICATOR VIEW
     func customizeActivityIndicator() {
-        self.activityIndicator = UIActivityIndicatorView.init(style: UIActivityIndicatorView.Style.medium)
-        activityIndicator.alpha = 1.0
+        self.activityIndicator = UIActivityIndicatorView.init(style: UIActivityIndicatorView.Style.large)
+        self.activityIndicator.alpha = 1.0
         self.activityIndicator.color = .red
-        self.activityIndicator.startAnimating()
-        self.view.addSubview(self.activityIndicator)
-        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        loadingTextLabel.textColor = UIColor.black
+        loadingTextLabel.text = appStrings.LOADING_STRING
+        loadingTextLabel.font = UIFont(name: appFonts.HELVETICA_N, size: 12)
+        loadingTextLabel.sizeToFit()
+        loadingTextLabel.center = CGPoint(x: activityIndicator.center.x, y: activityIndicator.center.y + 30)
         
     }
     //MARK: PULL TO REFRESH
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
     
     //MARK: Fetch COUNTRY INFORMATION FROM SERVER API
     func fetchCountryInfo() {
+        self.activityIndicator.startAnimating()
         API.fetchCountryData(success: { (result) in
             self.countryInfo = result
             DispatchQueue.main.async {
@@ -68,11 +70,20 @@ class ViewController: UIViewController {
             self.tblAboutCanada.rowHeight = UITableView.automaticDimension
             self.tblAboutCanada.estimatedRowHeight = 100
             self.view.addSubview(self.tblAboutCanada)
+            self.tblAboutCanada.addSubview(self.activityIndicator)
+            self.activityIndicator.addSubview(self.loadingTextLabel)
+            self.setConstraintsToActivityIndicator()
             self.tblAboutCanada.addSubview(self.refreshControl)
             self.refreshControl.attributedTitle = NSAttributedString(string: appStrings.REFRESHCONTROL_STRING)
             self.refreshControl.addTarget(self, action: #selector(self.refreshTableViewData), for: UIControl.Event.valueChanged)
             self.setTableViewConstraints()
         }
+    }
+    //MARK: SET CONSTRAINTS TO ACTIVITY INDICATOR
+    func setConstraintsToActivityIndicator() {
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
     
     //MARK: SET TABLEVIEW CONSTRAINTS
@@ -116,6 +127,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
        //Table View Delegate
        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
            return UITableView.automaticDimension
+       }
+    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            self.tblAboutCanada.deselectRow(at: indexPath, animated: true)
        }
 }
 

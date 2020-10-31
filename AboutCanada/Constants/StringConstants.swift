@@ -15,5 +15,6 @@ struct appStrings {
     static let TABLE_DESCRIPTION_NOTAVILABLE = "Description Not Avilable"
     static let REFRESHCONTROL_STRING = "Pull to Refresh"
     static let DEFAULT_TITLE = "Title"
+    static let LOADING_STRING = "LOADING"
     
 }

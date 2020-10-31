@@ -40,13 +40,13 @@ class TableViewDetailsCell: UITableViewCell {
     func configureTitleLabel() {
         self.lblTitle.numberOfLines = 0
         self.lblTitle.adjustsFontSizeToFitWidth = true
-        self.lblTitle.font = UIFont(name:appFonts.HELVETICA_B, size: 16.0)
+        self.lblTitle.font = UIFont(name:appFonts.HELVETICA_B, size: 18.0)
     }
     //MARK: TABLEVIEW DESCRIPTION LABEL
     func configureDescriptionLabel() {
         self.lblDescription.numberOfLines = 0
         self.lblDescription.adjustsFontSizeToFitWidth = true
-        self.lblDescription.font = UIFont(name:appFonts.HELVETICA_N, size: 20.0)
+        self.lblDescription.font = UIFont(name:appFonts.HELVETICA_N, size: 18.0)
     }
     //MARK: TABLEIVIEW IMAGE DISPLAY
     func configureImageView() {
